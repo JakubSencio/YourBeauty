@@ -16,7 +16,7 @@
             <Button Content="Dodaj wizytę" Height="25" Width="100" Margin="5"/>
             <Button Content="Edytuj wizytę" Height="25" Width="100" Margin="5"/>
             <Button Content="Usuń wizytę" Height="25" Width="100" Margin="5"/>
-            <Button Content="Refresh" Height="25" Width="100" Margin="5"/>
+            <Button Content="Odswież" Height="25" Width="100" Margin="5"/>
             <ComboBox Height="25" Width="150"/>
         </StackPanel>
         <DataGrid Grid.Row="1"/>
