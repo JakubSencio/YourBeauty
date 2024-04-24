@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YourBeauty"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="YourBeautyKF" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Dodaj wizytę" Height="25" Width="100" Margin="5"/>
+            <Button Content="Edytuj wizytę" Height="25" Width="100" Margin="5"/>
+            <Button Content="Usuń wizytę" Height="25" Width="100" Margin="5"/>
+            <Button Content="Refresh" Height="25" Width="100" Margin="5"/>
+            <ComboBox Height="25" Width="150"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1"/>
     </Grid>
 </Window>
