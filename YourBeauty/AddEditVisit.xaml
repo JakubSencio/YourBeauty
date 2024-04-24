@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YourBeauty"
         mc:Ignorable="d"
-        Title="Zarządzanie wizytą" Height="450" Width="800">
-    <Grid HorizontalAlignment="Center" Width="800">
+        Title="Zarządzanie wizytą" Height="400" Width="400">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -16,25 +16,31 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Label Content="ID:" Margin="5"/>
-        <TextBox Grid.Column="1" Margin="5"/>
+        <Label Content="ID:" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="2" Margin="5,5,5,5"/>
 
-        <Label Grid.Row="1" Content="Klient:" Margin="5"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+        <Label Grid.Row="1" Content="Klient:" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+        <ComboBox Grid.Row="1" Grid.Column="2" Margin="5,5,5,5"/>
 
-        <Label Grid.Row="2" Content="Data:" Margin="5"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+        <Label Grid.Row="2" Content="Data:" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="5,5,5,5"/>
 
-        <Label Grid.Row="3" Content="Zabieg:" Margin="5"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" Margin="5"/>
+        <Label Grid.Row="3" Content="Zabieg:" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+        <ComboBox Grid.Row="3" Grid.Column="2" Margin="5,5,5,5"/>
 
-        <Label Grid.Row="4" Content="Cena:" Margin="5"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="5"/>
+        <Label Grid.Row="4" Content="Cena:" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Margin="5,5,5,5"/>
 
         <Label Grid.Row="5" Content="Czas trwania:" Margin="5"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Margin="5"/>
+        <TextBox Grid.Row="5" Grid.Column="2" Margin="5"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" Margin="50,37,0,204" Width="251">
+            <Button Content="Anuluj" Height="25" Width="100" Margin="5" />
+            <Button Content="Zatwierdz" Height="25" Width="100" Margin="5" />
+        </StackPanel>
     </Grid>
 </Window>
