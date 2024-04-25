@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YourBeauty.ViewModels
 {
-    internal class MainViewModel
+    internal class MainViewModel : ViewModelBase
     {
     }
 }
