@@ -23,6 +23,7 @@ namespace YourBeauty
         public AddEditVisit()
         {
             InitializeComponent();
+            DataContext = new AddEditVisit();
         }
     }
 }

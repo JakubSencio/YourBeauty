@@ -13,8 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YourBeauty.ViewModels;
 
-namespace YourBeauty
+namespace YourBeauty.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
@@ -24,6 +25,7 @@ namespace YourBeauty
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
