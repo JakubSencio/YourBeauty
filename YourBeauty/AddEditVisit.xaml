@@ -1,11 +1,17 @@
-﻿<Window x:Class="YourBeauty.AddEditVisit"
+﻿<mah:MetroWindow x:Class="YourBeauty.AddEditVisit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:YourBeauty"
+
         mc:Ignorable="d"
-        Title="Zarządzanie wizytą" Height="300" Width="321">
+        Title="Zarządzanie wizytą" Height="300" Width="320">
+ 
+    
+    
+    
     <Grid Margin="0,0,10,13">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -45,4 +51,4 @@
             <Button Content="Zatwierdź" Height="25" Width="100" Margin="5" />
         </StackPanel>
     </Grid>
-</Window>
+</mah:MetroWindow>
