@@ -22,6 +22,7 @@
            
             <Button
                 Command="{Binding EditClientCommand}" 
+                CommandParameter="{Binding SelectedClient}"
                 Content="Edytuj wizytę" 
                 Height="25" 
                 Width="100" 
