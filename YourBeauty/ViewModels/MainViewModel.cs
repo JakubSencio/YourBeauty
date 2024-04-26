@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace YourBeauty.ViewModels
     {
         public MainViewModel()
         {
+            AddClientCommand = new RelayCommand(AddClient);
+            EditClientCommand = new RelayCommand(EditClient);
+            DeleteClientCommand = new RelayCommand(DeleteClient);
             RefreshClientsCommand = new RelayCommand(RefreshClients);
+
 
             Clients = new ObservableCollection<Client> 
             { 
@@ -37,7 +42,13 @@ namespace YourBeauty.ViewModels
                 },
             };
         }
+
+
         public ICommand RefreshClientsCommand { get; set; }
+        public ICommand AddClientCommand { get; set; }
+        public ICommand EditClientCommand { get; set; }
+        public ICommand DeleteClientCommand { get; set; }
+
 
         private Client _selectedClient;
         public Client SelectedClient
@@ -62,7 +73,20 @@ namespace YourBeauty.ViewModels
 
 
 
+        private void DeleteClient(object obj)
+        {
+            throw new NotImplementedException();
+        }
 
+        private void EditClient(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddClient(object obj)
+        {
+            throw new NotImplementedException();
+        }
         private void RefreshClients(object obj)
         {
         }
