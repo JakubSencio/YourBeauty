@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -23,19 +24,16 @@ namespace YourBeauty.ViewModels
                 { 
                     FirstName = "Jakub", 
                     LastName = "Sencio", 
-                    Group = new Group { Id = 1 } 
                 },
                 new Client
                 {
                     FirstName = "Michał",
                     LastName = "Nowak",
-                    Group = new Group { Id = 2 }
                 },
                 new Client
                 {
                     FirstName = "Janusz",
                     LastName = "Kowalski",
-                    Group = new Group { Id = 3 }
                 },
             };
         }
@@ -61,6 +59,9 @@ namespace YourBeauty.ViewModels
                 OnPropertyChanged();
             }
         }
+
+
+
 
         private void RefreshClients(object obj)
         {

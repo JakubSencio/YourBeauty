@@ -16,12 +16,6 @@
             <Button Content="Dodaj wizytę" Height="25" Width="100" Margin="5"/>
             <Button Content="Edytuj wizytę" Height="25" Width="100" Margin="5"/>
             <Button Content="Usuń wizytę" Height="25" Width="100" Margin="5"/>
-            <ComboBox 
-                Height="25" 
-                Width="150"
-                ItemsSource="{Binding Groups}"
-                SelectedValue="{Binding SelectedGroupId}"
-                />
             <Button Command="{Binding RefreshClientsCommand}" Content="Odswież" Height="25" Width="100" Margin="5"/>
         </StackPanel>
         <DataGrid
@@ -40,7 +34,6 @@
                 <DataGridTextColumn Binding="{Binding Description}"   Header="Zabieg"/>
                 <DataGridTextColumn Binding="{Binding Price}"   Header="Cena"/>
                 <DataGridTextColumn Binding="{Binding Time}"   Header="Czas trwania"/>
-                <DataGridTextColumn Binding="{Binding Group.Name}"  Header="Grupa" />
 
 
             </DataGrid.Columns>

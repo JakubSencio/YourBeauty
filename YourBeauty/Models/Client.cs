@@ -15,6 +15,5 @@ namespace YourBeauty.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public int Time {  get; set; }
-        public Group Group { get; set; }
     }
 }
