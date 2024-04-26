@@ -13,10 +13,31 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Content="Dodaj wizytę" Height="25" Width="100" Margin="5"/>
-            <Button Content="Edytuj wizytę" Height="25" Width="100" Margin="5"/>
-            <Button Content="Usuń wizytę" Height="25" Width="100" Margin="5"/>
-            <Button Command="{Binding RefreshClientsCommand}" Content="Odswież" Height="25" Width="100" Margin="5"/>
+            <Button 
+                Command="{Binding AddClientCommand}" 
+                Content="Dodaj wizytę" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
+           
+            <Button
+                Command="{Binding EditClientCommand}" 
+                Content="Edytuj wizytę" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
+            <Button 
+                Command="{Binding DeleteClientCommand}"                 
+                Content="Usuń wizytę" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
+            <Button 
+                Command="{Binding RefreshClientsCommand}" 
+                Content="Odswież" 
+                Height="25" 
+                Width="100" 
+                Margin="5"/>
         </StackPanel>
         <DataGrid
             Grid.Row="1"
