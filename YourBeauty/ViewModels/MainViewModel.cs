@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Input;
 using YourBeauty.Commands;
 using YourBeauty.Models;
+using YourBeauty.Views;
 
 namespace YourBeauty.ViewModels
 {

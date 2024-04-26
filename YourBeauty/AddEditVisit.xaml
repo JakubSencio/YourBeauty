@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:YourBeauty"
-        WindowStartupLocation="CenterScreen"
-                 
+        WindowStartupLocation="CenterScreen"            
         mc:Ignorable="d"
+        Name="AddEditVisitView"
         Title="Zarządzanie wizytą" Height="350" Width="320">
- 
-    
-    
+
+
     
     <Grid Margin="0,0,10,13">
         <Grid.RowDefinitions>
@@ -29,31 +28,31 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Label Content="ID:" Margin="5"/>
-        <TextBox IsReadOnly="True" Grid.Column="1" Margin="5"/>
+        <TextBox Text="{Binding Client.Id}" IsReadOnly="True" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="1" Content="Imie:" Margin="5"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+        <TextBox Text="{Binding Client.FirstName}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="2" Content="Nazwisko:" Margin="5"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+        <TextBox Text="{Binding Client.LastName}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="3" Content="Data:" Margin="5"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="5"/>
+        <TextBox Text="{Binding Client.Data}" Grid.Row="3" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="4" Content="Zabieg:" Margin="5"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Margin="5"/>
+        <ComboBox Text="{Binding Client.Description}" Grid.Row="4" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="5" Content="Cena:" Margin="5"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Margin="5"/>
+        <TextBox Text="{Binding Client.Price}" Grid.Row="5" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="6" Content="Czas trwania:" Margin="5"/>
-        <TextBox Grid.Row="6" Grid.Column="1" Margin="5"/>
+        <TextBox Grid.Row="6" Text="{Binding Client.Time}" Grid.Column="1" Margin="5"/>
 
 
 
         <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,20" Width="220">
-            <Button Content="Anuluj" Height="25" Width="100" Margin="5" />
-            <Button Content="Zatwierdź" Height="25" Width="100" Margin="5" />
+            <Button Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=AddEditVisitView}" Content="Anuluj" Height="25" Width="100" Margin="5" />
+            <Button Command="{Binding ConfirmCommand}" CommandParameter="{Binding ElementName=AddEditVisitView}"Content="Zatwierdź" Height="25" Width="100" Margin="5" />
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

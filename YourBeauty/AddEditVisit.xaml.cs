@@ -12,14 +12,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using System.Windows;
 using YourBeauty.Models;
 using YourBeauty.ViewModels;
 
-namespace YourBeauty
+namespace YourBeauty.Views
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddEditVisit.xaml
-    /// </summary>
     public partial class AddEditVisit : MetroWindow
     {
         public AddEditVisit(Client client = null)
