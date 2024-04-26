@@ -6,7 +6,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:YourBeauty"
         WindowStartupLocation="CenterScreen"
-
+                 
         mc:Ignorable="d"
         Title="Zarządzanie wizytą" Height="350" Width="320">
  
@@ -28,7 +28,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Label Content="ID:" Margin="5"/> 
+        <Label Content="ID:" Margin="5"/>
         <TextBox IsReadOnly="True" Grid.Column="1" Margin="5"/>
 
         <Label Grid.Row="1" Content="Imie:" Margin="5"/>
