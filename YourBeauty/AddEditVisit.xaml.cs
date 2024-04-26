@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using YourBeauty.Models;
+using YourBeauty.ViewModels;
 
 namespace YourBeauty
 {
@@ -20,10 +22,10 @@ namespace YourBeauty
     /// </summary>
     public partial class AddEditVisit : MetroWindow
     {
-        public AddEditVisit()
+        public AddEditVisit(Client client = null)
         {
             InitializeComponent();
-            DataContext = new AddEditVisit();
+            DataContext = new AddEditVisitViewModel(client);
         }
     }
 }

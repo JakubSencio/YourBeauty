@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -17,31 +19,16 @@ namespace YourBeauty.ViewModels
     {
         public MainViewModel()
         {
-            AddClientCommand = new RelayCommand(AddClient);
-            EditClientCommand = new RelayCommand(EditClient);
-            DeleteClientCommand = new RelayCommand(DeleteClient);
+            AddClientCommand = new RelayCommand(AddEditClient);
+            EditClientCommand = new RelayCommand(AddEditClient, 
+                CanEditDeleteClient);
+            DeleteClientCommand = new AsyncRelayCommand(DeleteClient, 
+                CanEditDeleteClient);
             RefreshClientsCommand = new RelayCommand(RefreshClients);
 
-
-            Clients = new ObservableCollection<Client> 
-            { 
-                new Client 
-                { 
-                    FirstName = "Jakub", 
-                    LastName = "Sencio", 
-                },
-                new Client
-                {
-                    FirstName = "Michał",
-                    LastName = "Nowak",
-                },
-                new Client
-                {
-                    FirstName = "Janusz",
-                    LastName = "Kowalski",
-                },
-            };
+            RefreshPanel();
         }
+
 
 
         public ICommand RefreshClientsCommand { get; set; }
@@ -73,24 +60,62 @@ namespace YourBeauty.ViewModels
 
 
 
-        private void DeleteClient(object obj)
+        private async Task DeleteClient(object obj)
         {
-            throw new NotImplementedException();
+            var metroWindow = Application.Current.MainWindow as MetroWindow;
+            var dialog = await metroWindow.ShowMessageAsync("Usuwanie wizyty", 
+                $"Czy napewno chcesz usunąć wizytę klienta " +
+                $"{SelectedClient.FirstName} {SelectedClient.LastName} z dnia {SelectedClient.Data}",
+                MessageDialogStyle.AffirmativeAndNegative
+                );
+            if(dialog != MessageDialogResult.Affirmative)
+                return;
+
+            RefreshPanel();
         }
 
-        private void EditClient(object obj)
+
+        private void AddEditClient(object obj)
         {
-            throw new NotImplementedException();
+            var addEditVisitWindow = new AddEditVisit(obj as Client);
+            addEditVisitWindow.Closed += AddEditVisitWindow_Closed;
+            addEditVisitWindow.ShowDialog();
         }
 
-        private void AddClient(object obj)
+        private void AddEditVisitWindow_Closed(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            RefreshPanel();
         }
+
         private void RefreshClients(object obj)
         {
+            RefreshPanel();
         }
-
+        private bool CanEditDeleteClient(object obj)
+        {
+            return SelectedClient != null;
+        }
+        private void RefreshPanel()
+        {
+            Clients = new ObservableCollection<Client>
+            {
+                new Client
+                {
+                    FirstName = "Jakub",
+                    LastName = "Sencio",
+                },
+                new Client
+                {
+                    FirstName = "Michał",
+                    LastName = "Nowak",
+                },
+                new Client
+                {
+                    FirstName = "Janusz",
+                    LastName = "Kowalski",
+                },
+            };
+        }
 
 
     }
