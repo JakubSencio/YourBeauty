@@ -16,9 +16,34 @@
             <Button Content="Dodaj wizytę" Height="25" Width="100" Margin="5"/>
             <Button Content="Edytuj wizytę" Height="25" Width="100" Margin="5"/>
             <Button Content="Usuń wizytę" Height="25" Width="100" Margin="5"/>
-            <ComboBox Height="25" Width="150"/>
+            <ComboBox 
+                Height="25" 
+                Width="150"
+                ItemsSource="{Binding Groups}"
+                SelectedValue="{Binding SelectedGroupId}"
+                />
             <Button Command="{Binding RefreshClientsCommand}" Content="Odswież" Height="25" Width="100" Margin="5"/>
         </StackPanel>
-        <DataGrid Grid.Row="1"/>
+        <DataGrid
+            Grid.Row="1"
+            ItemsSource="{Binding Clients}"
+            SelectedItem="{Binding SelectedClient}"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            SelectionMode="Single"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"  />
+                <DataGridTextColumn Binding="{Binding FirstName}"  Header="Imię"/>
+                <DataGridTextColumn Binding="{Binding LastName}"   Header="Nazwisko"/>
+                <DataGridTextColumn Binding="{Binding Data}"   Header="Data"/>
+                <DataGridTextColumn Binding="{Binding Description}"   Header="Zabieg"/>
+                <DataGridTextColumn Binding="{Binding Price}"   Header="Cena"/>
+                <DataGridTextColumn Binding="{Binding Time}"   Header="Czas trwania"/>
+                <DataGridTextColumn Binding="{Binding Group.Name}"  Header="Grupa" />
+
+
+            </DataGrid.Columns>
+            </DataGrid>
     </Grid>
 </mah:MetroWindow>
