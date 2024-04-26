@@ -37,10 +37,38 @@ namespace YourBeauty.ViewModels
                 OnPropertyChanged();
             }
         }
+        private bool _isUpdate;
+
+        public bool IsUpdate
+        {
+            get { return _isUpdate; }
+            set
+            {
+                _isUpdate = value;
+                OnPropertyChanged();
+            }
+        }
         private void Confirm(object obj)
         {
-
+            if (!IsUpdate)
+            {
+                AddClient();
+            }
+            else
+            {
+                UpdateClient();
+            }
             CloseWindow(obj as Window);
+        }
+
+        private void UpdateClient()
+        {
+            //base
+        }
+
+        private void AddClient()
+        {
+            //base
         }
 
         private void Close(object obj)
