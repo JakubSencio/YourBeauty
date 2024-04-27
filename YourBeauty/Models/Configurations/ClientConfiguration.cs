@@ -15,6 +15,7 @@ namespace YourBeauty.Models.Configurations
             ToTable("dbo.Clients");
 
             HasKey(x => x.Id);
+
         }
     }
 }
