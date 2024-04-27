@@ -16,12 +16,13 @@ using MahApps.Metro.Controls;
 using System.Windows;
 using YourBeauty.Models;
 using YourBeauty.ViewModels;
+using YourBeauty.Models.Wrappers;
 
 namespace YourBeauty.Views
 {
     public partial class AddEditVisit : MetroWindow
     {
-        public AddEditVisit(Client client = null)
+        public AddEditVisit(ClientWrapper client = null)
         {
             InitializeComponent();
             DataContext = new AddEditVisitViewModel(client);

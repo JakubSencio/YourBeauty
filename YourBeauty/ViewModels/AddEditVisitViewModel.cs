@@ -7,28 +7,29 @@ using System.Windows;
 using System.Windows.Input;
 using YourBeauty.Commands;
 using YourBeauty.Models;
+using YourBeauty.Models.Wrappers;
 
 namespace YourBeauty.ViewModels
 {
     public class AddEditVisitViewModel : ViewModelBase
     {
-        public AddEditVisitViewModel(Client client = null)
+        public AddEditVisitViewModel(ClientWrapper client = null)
         {
             CloseCommand = new RelayCommand(Close);
             ConfirmCommand = new RelayCommand(Confirm);
 
             if(client == null)
             {
-                Client = new Client();
+                Client = new ClientWrapper();
             }
             else 
             {
                 Client = client;
             }
         }
-        private Client _client;
+        private ClientWrapper _client;
 
-        public Client Client
+        public ClientWrapper Client
         {
             get { return _client; }
             set

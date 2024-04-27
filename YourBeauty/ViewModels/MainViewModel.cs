@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Input;
 using YourBeauty.Commands;
 using YourBeauty.Models;
+using YourBeauty.Models.Wrappers;
 using YourBeauty.Views;
 
 namespace YourBeauty.ViewModels
@@ -38,8 +39,8 @@ namespace YourBeauty.ViewModels
         public ICommand DeleteClientCommand { get; set; }
 
 
-        private Client _selectedClient;
-        public Client SelectedClient
+        private ClientWrapper _selectedClient;
+        public ClientWrapper SelectedClient
         {
             get { return _selectedClient; }
             set
@@ -48,8 +49,8 @@ namespace YourBeauty.ViewModels
                 OnPropertyChanged();
             }
         }
-        private ObservableCollection<Client> _clients;
-        public ObservableCollection<Client> Clients
+        private ObservableCollection<ClientWrapper> _clients;
+        public ObservableCollection<ClientWrapper> Clients
         {
             get { return _clients; }
             set
@@ -78,7 +79,7 @@ namespace YourBeauty.ViewModels
 
         private void AddEditClient(object obj)
         {
-            var addEditVisitWindow = new AddEditVisit(obj as Client);
+            var addEditVisitWindow = new AddEditVisit(obj as ClientWrapper);
             addEditVisitWindow.Closed += AddEditVisitWindow_Closed;
             addEditVisitWindow.ShowDialog();
         }
@@ -98,19 +99,19 @@ namespace YourBeauty.ViewModels
         }
         private void RefreshPanel()
         {
-            Clients = new ObservableCollection<Client>
+            Clients = new ObservableCollection<ClientWrapper>
             {
-                new Client
+                new ClientWrapper
                 {
                     FirstName = "Jakub",
                     LastName = "Sencio",
                 },
-                new Client
+                new ClientWrapper
                 {
                     FirstName = "Michał",
                     LastName = "Nowak",
                 },
-                new Client
+                new ClientWrapper
                 {
                     FirstName = "Janusz",
                     LastName = "Kowalski",

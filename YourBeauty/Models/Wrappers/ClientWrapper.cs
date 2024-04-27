@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YourBeauty.Models
+namespace YourBeauty.Models.Wrappers
 {
-    public class Client // Id FirstName LastName Data Zabieg Price Time
+    public class ClientWrapper // Id FirstName LastName Data Zabieg Price Time
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
