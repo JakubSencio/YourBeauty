@@ -87,6 +87,8 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Commands\AsyncRelayCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Models\Configurations\ClientConfiguration.cs" />
+    <Compile Include="Models\Configurations\PricingConfiguration.cs" />
     <Compile Include="Models\Domains\Client.cs" />
     <Compile Include="Models\Domains\Pricing.cs" />
     <Compile Include="Models\Wrappers\ClientWrapper.cs" />
@@ -133,7 +135,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Configurations\" />
     <Folder Include="Models\Converters\" />
     <Folder Include="Views\" />
   </ItemGroup>

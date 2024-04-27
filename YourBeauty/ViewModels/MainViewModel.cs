@@ -21,6 +21,11 @@ namespace YourBeauty.ViewModels
     {
         public MainViewModel()
         {
+            using (var context = new ApplicationDbContext())
+            {
+                var clients = context.Clients.ToList();
+            }
+
             AddClientCommand = new RelayCommand(AddEditClient);
             EditClientCommand = new RelayCommand(AddEditClient, 
                 CanEditDeleteClient);
