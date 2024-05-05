@@ -33,7 +33,7 @@ namespace YourBeauty.ViewModels
                 CanEditDeleteClient);
             RefreshClientsCommand = new RelayCommand(RefreshClients);
 
-            RefreshPanel();
+            RefreshPanel();         
         }
 
 
